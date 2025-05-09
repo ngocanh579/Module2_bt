@@ -5,16 +5,22 @@ public class tinhgiatiendien {
         System.out.print(" so dien da su dung trong thang: ");
         Scanner sc = new Scanner(System.in);
         int dien = sc.nextInt();
-        double total = 0;
+        double tong = 0;
+        double giaMuc1 = 1.800;
+        double giaMuc2 = 2.300;
+        double giaMuc3 = 3.000;
 
         if(dien>0 && dien <= 50 ){
-            total =dien * 1.800;
+            tong =dien * giaMuc1;
         }else if(dien>50 && dien <= 100){
-            total = dien * 2.300;
+            tong =dien * giaMuc1;
+            tong += (dien-50) * giaMuc2;
         }else {
-            total = dien * 3.000;
+            tong = 50 * giaMuc1;// 50 so dau
+            tong += 50 * giaMuc2;// 50 so tiep
+            tong += (dien - 100) * giaMuc3;
         }
 
-        System.out.printf("tien dien phai tra la : %.2f VND\n", total);
+        System.out.printf("tien dien phai tra la : %.2f VND\n", tong);
     }
 }
